@@ -3,6 +3,8 @@ package com.socurites.modern.ex.lambda;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.function.Function;
+import java.util.function.Predicate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,6 +37,58 @@ public class AppleSortEx {
 		inventory.sort(Comparator.comparing((a) -> a.getWeight()));
 		inventory.sort(Comparator.comparing(Apple::getWeight));
 	}
+	
+	// 람다 표현식의 조합
+	// based on Default Method of interface
+	// Comparator 조합
+	public void composeComparator() {
+		List<Apple> inventory = Arrays.asList(
+	        new Apple(80, "green"),
+	        new Apple(155, "green"),
+	        new Apple(120, "red")
+	    );
+		
+		// sorting
+		inventory.sort(Comparator.comparing(Apple::getWeight));
+		
+		// reverse sorting
+		inventory.sort(Comparator.comparing(Apple::getWeight).reversed());
+		
+		// sorting by composite values
+		inventory.sort(Comparator.comparing(Apple::getWeight)
+				.reversed()
+				.thenComparing(Apple::getColor));
+	}
+	
+	
+	// Predicate 조합
+	public void composePredicate() {
+		// is red apple?
+		Predicate<Apple> redApple = ((a) -> "red".equals(a.color));
+		
+		// negate
+		Predicate<Apple> notRedApple = redApple.negate();
+		
+		// and
+		Predicate<Apple> redAndHeavyApple = redApple.and((a) -> a.weight > 150);
+		
+		// or
+		Predicate<Apple> redAndHeavyAppleOrGreen = (redApple.and((a) -> a.weight > 150))
+				.or((a) -> "green".equals(a.color));
+	}
+	
+	// Function 조합
+	public void composeFunction() {
+		// andThen
+		// h(x) = g(f(x))
+		Function<Integer, Integer> f = x -> x + 1;
+		Function<Integer, Integer> g = x -> x * 2;
+		Function<Integer, Integer> h = f.andThen(g);
+		
+		// compose
+		// h(x) = f(g(x))
+	}
+	
 	
 	@Getter
 	@Setter
