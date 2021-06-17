@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.function.Supplier;
 
 /**
  * Java 8에서 제공하는 함수형 인터페이스 종류
@@ -61,4 +62,7 @@ public class FunctionalInterfaceEx {
 	
 	// Supplier
 	// T get();
+	public void supplier() {
+		Supplier<Integer> five = () -> new Integer(5);
+	}
 }
