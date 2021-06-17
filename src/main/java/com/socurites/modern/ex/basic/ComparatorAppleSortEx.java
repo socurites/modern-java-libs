@@ -33,6 +33,12 @@ public class ComparatorAppleSortEx {
 		inventory.sort((Apple o1, Apple o2) -> o1.weight - o2.weight);
 	}
 	
+	public void exampleLambda2(List<Apple> inventory) {
+		//Comparator<Apple> byWeight = (Apple o1, Apple o2) -> {return o1.weight - o2.weight;};
+		Comparator<Apple> byWeight = (Apple o1, Apple o2) -> o1.weight - o2.weight;
+		inventory.sort(byWeight);
+	}
+	
 	
 	@Getter
 	@Setter
