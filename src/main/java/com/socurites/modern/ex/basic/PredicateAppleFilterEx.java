@@ -1,4 +1,4 @@
-package com.socurites.modern.ex;
+package com.socurites.modern.ex.basic;
 
 import java.util.ArrayList;
 import java.util.Arrays;

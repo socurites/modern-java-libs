@@ -1,4 +1,4 @@
-package com.socurites.modern.ex;
+package com.socurites.modern.ex.basic;
 
 public class ExTemplate {
 	public static void main(String[] args) {
