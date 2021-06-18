@@ -69,7 +69,19 @@
 | 유형  | 팩토리 메서드  | 리턴 타입  | 설명  | 예시  |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | 구조변환  | toList  | List<T>  | 리스트로 수집  | stream().collect(toList())  |
-
+| 구조변환  | toSet  | Set<T>  | Set으로 수집  | stream().collect(toSet())  |
+| 구조변환  | toCollection  | Collection<T>  | 지정 타입으로 수집  | stream().collect(toCollection(), ArrayList::new)  |
+| 리듀싱  | counting  | Long  | 아이템 수  | stream().collect(counting())  |
+| 리듀싱  | summingInt  | Integer  | 합계  | stream().collect(summingInt(Dish::getCalories))  |
+| 리듀싱  | averagingInt  | Double  | 평균  | stream().collect(averagingInt(Dish::getCalories))  |
+| 리듀싱  | summarizingInt  | IntSummaryStatistics  | 통계  | stream().collect(summarizingInt(Dish::getCalories))  |
+| 리듀싱  | joining  | String  | 문자열 연결  | stream().map(Dish::getName).collect(joining(", "))  |
+| 리듀싱  | maxBy  | Optional<T>  | 최댓값  | stream().collect(maxBy(comparingInt(Dish::getCalories))  |
+| 리듀싱  | minBy  | Optional<T>  | 최솟값  | stream().collect(minBy(comparingInt(Dish::getCalories))  |
+| 리듀싱  | reducing  | 아이템 타입  | 계산방식  | stream().collect(reducing(0, Dish::getCalories, Integer::sum))  |
+| 그루핑  | groupingBy  | Map<K, List<T>>  | 그루핑 결과  | stream().collect(groupingBy(Dish::getType))  |
+| 분할  | partitioningBy  | Map<Boolean, List<T>>  | 2개로 그루핑  | stream().collect(partitioningBy(Dish::isVegetarian))  |
+| ?  | collectingAndThen  | -  | -  | stream().collect(collectingAndThen(toList(), List::size))  |
 
 
 ## Java 9
