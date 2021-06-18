@@ -3,9 +3,9 @@ package com.socurites.modern.stream.advanced;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
+import java.util.stream.Stream;import com.jayway.jsonpath.internal.function.numeric.Min;
 import com.socurites.modern.stream.model.Dish;
 
 public class DishStreamEx {
@@ -92,25 +92,88 @@ public class DishStreamEx {
 		
 		// Bad #1
 		List<String[]> badList1 = words.stream()
-		.map(word -> word.split(""))
-		.distinct()
-		.collect(Collectors.toList());
+			.map(word -> word.split(""))
+			.distinct()
+			.collect(Collectors.toList());
 		
 		// Bad #2
 		List<Stream<String>> badList2 = words.stream()
-		.map(word -> word.split(""))
-		.map(Arrays::stream)
-		.distinct()
-		.collect(Collectors.toList());
+			.map(word -> word.split(""))
+			.map(Arrays::stream)
+			.distinct()
+			.collect(Collectors.toList());
 		
 		// Good
 		List<String> goodList = words.stream()
-		.map(word -> word.split(""))
-		.flatMap(Arrays::stream)
-		.distinct()
-		.collect(Collectors.toList());
+			.map(word -> word.split(""))
+			.flatMap(Arrays::stream)
+			.distinct()
+			.collect(Collectors.toList());
+	}
+	
+	// 매칭
+	public void matching() {
+		List<Dish> menu = Dish.menu;
+		
+		// anyMatch
+		boolean anyMatch = menu.stream()
+			.anyMatch(Dish::isVegetarian);
+		
+		// allMatch
+		boolean allMatch = menu.stream()
+			.allMatch(Dish::isVegetarian);
+		
+		// noneMatch
+		boolean noneMatch = menu.stream()
+				.noneMatch(Dish::isVegetarian);
+		
+	}
+	
+	// 검색(찾기)
+	public void find() {
+		List<Dish> menu = Dish.menu;
+		
+		// findAny
+		Optional<Dish> findAny = menu.stream()
+			.findAny();
+		
+		// findFirst
+		Optional<Dish> findFirst = menu.stream()
+			.findFirst();
+		
+		// findFirst
+		// Ex) 숫자 리스트의 제곱값이 3으로 나누어 떨어지는 첫번째 값
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+		
+		Optional<Integer> findFirst2 = numbers.stream()
+			.map(n -> n * n)
+			.filter(n -> 0 == n % 3)
+			.findFirst();
+	}
+	
+	// 리듀싱: sum, min, max 구하기
+	public void reduce() {
+		List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6, 7);
+		
+		// 합계 with 초기값
+		Integer sum = numbers.stream()
+			.reduce(0, (a, b) -> a + b);
+		
+		Integer sum2 = numbers.stream()
+				.reduce(0, Integer::sum);
 		
 		
+		// 합계 without 초기값
+		Optional<Integer> sum3 = numbers.stream()
+			.reduce((a, b) -> a + b);
 		
+		
+		// 최대값
+		Optional<Integer> max = numbers.stream()
+			.reduce(Integer::max);
+		
+		// 최소값
+		Optional<Integer> min = numbers.stream()
+			.reduce(Integer::min);
 	}
 }

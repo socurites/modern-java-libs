@@ -19,9 +19,9 @@
 | Predicate<T>  | 필터링  | (T) -> boolean  | boolean test(T t)  | filter, allMatch, anyMatch, noneMatch  |
 | Consumer<T>  | 소비  | (T) -> void  | void accept(T t)  | forEach  |
 | Function<T, R>  | 매핑  | (T) -> R  | R apply(T t)  | map  |
-| Supplier<T>  | 생성  | () -> T  | T get()  | -  |
 | BiFunction<T, U, R>  | 매핑  | (T, U) -> R  | R apply(T t, U u)  | reduce  |
-| BinaryOperator<T>  | 리듀싱  | (T, T) -> T  | T get()  | reduce  |
+| BinaryOperator<T>  | 리듀싱  | (T, T) -> T  | T apply(T t, T t)  | reduce  |
+| Supplier<T>  | 생성  | () -> T  | T get()  | -  |
 
 
 
