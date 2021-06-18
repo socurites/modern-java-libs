@@ -11,10 +11,18 @@
 ### 신규 기능
 * @FunctionalInterace
 
-| @FunctionalInterface  | Function |
-| ------------- | ------------- |
-| Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  |
+| @FunctionalInterface  | 기능  | 함수 syntax  | Method Syntax  | 스트림 연산  |
+| ------------- | ------------- | ------------- | ------------- | ------------- |
+| Runnable  | 쓰레드  | () -> void  | int compare(T o1, T o2)  | -  |
+| Callable<V>  | 쓰레드  | () -> V  | V call() throws Exception  | -  |
+| Comparator<T>  | 정렬  | (T, T) -> int  | void run()  | sorted  |
+| Predicate<T>  | 필터링  | (T) -> boolean  | boolean test(T t)  | filter, allMatch, anyMatch, noneMatch  |
+| Consumer<T>  | 소비  | (T) -> void  | void accept(T t)  | forEach  |
+| Function<T, R>  | 매핑  | (T) -> R  | R apply(T t)  | map  |
+| Supplier<T>  | 생성  | () -> T  | T get()  | -  |
+| BiFunction<T, U, R>  | 매핑  | (T, U) -> R  | R apply(T t, U u)  | reduce  |
+| BinaryOperator<T>  | 리듀싱  | (T, T) -> T  | T get()  | reduce  |
+
 
 
 * 스트림 API
@@ -23,14 +31,14 @@
     * 조립할 수 있음
         * 중간 연산
             * 필터링: filter
-            * 슬라이싱: takeWhile, dropWhile
+            * 슬라이싱: takeWhile, dropWhile  <== Java9
             * 정렬: sorted
-            * 검색: find
-            * 매칭: match
+            * 검색: findAny, findFirst
+            * 매칭: allMatch, anyMatch, noneMatch
             * 매핑: map
             * 리듀싱: reduce 
             * 축소: limit
-            * 중복제거: distinct
+            * 중복제거: distinct (stable only for ordered stream)
         * 단말(최종) 연산
             * 수집: collect
             * 갯수: count
