@@ -1,4 +1,4 @@
-package com.socurites.modern.stream.model;
+package com.socurites.modern.stream.advanced.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

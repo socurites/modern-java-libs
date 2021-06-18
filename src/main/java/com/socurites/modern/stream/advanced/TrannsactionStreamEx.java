@@ -6,8 +6,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import com.socurites.modern.stream.model.Trader;
-import com.socurites.modern.stream.model.Transaction;import ch.qos.logback.core.net.SyslogOutputStream;
+import com.socurites.modern.stream.advanced.model.Trader;
+import com.socurites.modern.stream.advanced.model.Transaction;
+
+import ch.qos.logback.core.net.SyslogOutputStream;
 
 public class TrannsactionStreamEx {
 	public static void main(String[] args) {
