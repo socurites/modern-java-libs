@@ -1,4 +1,4 @@
-package com.socurites.modern.stream.basic;
+package com.socurites.modern.stream.model;
 
 import java.util.Arrays;
 import java.util.List;
