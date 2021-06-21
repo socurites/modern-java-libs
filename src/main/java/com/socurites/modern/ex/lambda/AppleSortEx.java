@@ -87,6 +87,7 @@ public class AppleSortEx {
 		
 		// compose
 		// h(x) = f(g(x))
+		Function<Integer, Integer> h2 = f.compose(g);
 	}
 	
 	
