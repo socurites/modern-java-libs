@@ -9,8 +9,6 @@ import java.util.stream.Collectors;
 import com.socurites.modern.stream.advanced.model.Trader;
 import com.socurites.modern.stream.advanced.model.Transaction;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
-
 public class TrannsactionStreamEx {
 	public static void main(String[] args) {
 		Trader raoul = new Trader("Raoul", "Cambridge");
