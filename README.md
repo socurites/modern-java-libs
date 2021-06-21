@@ -89,8 +89,9 @@
 * 모듈 시스템
 * Flow API
 
-### 리액티브 프로그래밍
-* CompletableFuture
+### 리액티브 프로그래밍(non-blocking & async)
+* CompletableFuture: Java 8 (non-blocking)
+* 
 
 
 ## Java 10
