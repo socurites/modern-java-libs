@@ -95,6 +95,12 @@
    * pub-sub 
 
 
+### Collection Factory
+* List.of
+* Set.of
+* Map.ofEntries(May.Entry..)
+
+
 ## Java 10
 ### 신규 기능
 * 지역 변수 추론
