@@ -28,7 +28,7 @@ public class CompletableFutureBasicEx {
 		
 		// do Task C
 		try {
-			Double result = future.get(1, TimeUnit.SECONDS);
+			Double result = future.get(1, TimeUnit.SECONDS);		// <- blocked thread
 			
 			// do some task here using result
 		} catch (InterruptedException e) {
