@@ -84,6 +84,13 @@
 | ?  | collectingAndThen  | -  | -  | stream().collect(collectingAndThen(toList(), List::size))  |
 
 
+### 리액티브 프로그래밍(non-blocking & async)
+* CompletableFuture: Java 8 (non-blocking)
+	* Future에 대한 선언형 구문 제공
+	* 동시성 Task 의존성을 파이프라인 형식으로 관리
+	* Future is Collection-style -- CompletableFutre is Stream-style
+
+
 ## Java 9
 ### 신규 기능
 * 모듈 시스템
