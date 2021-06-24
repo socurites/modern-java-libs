@@ -18,7 +18,6 @@ public class AsyncPortal {
 	public static void main(String[] args) {
 		String product = "myPhone27s";
 		
-		// Blocking stream
 		long start = System.nanoTime();
 		System.out.println(findPrices(product));
 		long duration = (System.nanoTime() - start) / 1_000_000;
@@ -35,7 +34,8 @@ public class AsyncPortal {
 		System.out.println(String.format("[CompletableFuture] Done in %d msec", duration));
 		
 	}
-	
+
+	// Blocking stream
 	public static List<String> findPrices(String product) {
 		return shops.stream()
 			.map(shop -> String.format("%s price is %.2f", 

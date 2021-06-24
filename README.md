@@ -91,6 +91,23 @@
 	* Future is Collection-style -- CompletableFutre is Stream-style
 
 
+* CompletableFuture API List
+
+| join  |   |   |
+| ------------- | ------------- | ------------- |
+| complete  | T -> boolean  |   |
+| allOf  | CompletableFutre... -> CompletableFutre<Void>  |   |
+| anyOf  | CompletableFutre... -> CompletableFutre<Object>  |   |
+| supplyAsync  | Supplier -> CompletableFuture  |   |
+| thenApply  | Function -> CompletableFuture  | I/O가 없는 Operation  |
+| thenCompose  | Function<T, CompletableFuture> -> CompletableFuture  | 의존 CF 연결 |
+| thenCombine  | CompletableFuture, Function<T, U> -> CompletableFuture<V>  | 독립 CF 연결 |
+| thenAccept  | Consumer<T> -> CompletableFuture<Void>  |   |
+| orTimeOut  | (long, TimeUnit) -> CompletableFuture | 지연된 Future 예외처리  |
+| completeOnTimeOut  | (T, long, TimeUnit) -> CompletableFuture | 지연된 Future 기본값<T> 할당   |
+
+
+
 ## Java 9
 ### 신규 기능
 * 모듈 시스템
