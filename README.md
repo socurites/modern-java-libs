@@ -117,12 +117,12 @@
 * CompletableFuture: Java 8 (non-blocking)
 * java.util.concurrent.Flow: Java 9 
    * pub-sub 
-   * 리액티브 애플리케이션
-	* 이벤트 드리븐
-	* 시간에 기반한 비동기, 동시적, 비결합 -> 회복성(resilient)
-   * 리액티브 시스템
-	* 메시지 드리븐
-	* 위치 투명성 -> 공간적 비결합 -> 탄력성(elastic)
+	* 리액티브 애플리케이션
+		* 이벤트 드리븐
+		* 시간에 기반한 비동기, 동시적, 비결합 -> 회복성(resilient)
+	* 리액티브 시스템
+		* 메시지 드리븐
+		* 위치 투명성 -> 공간적 비결합 -> 탄력성(elastic)
 
 ### Collection Factory
 * List.of
