@@ -4,9 +4,13 @@ plugins {
 	id 'java'
 }
 
+ext {
+	reactorVersion = '3.3.18.RELEASE'
+}
+
 group = 'com.socurites'
 version = '0.0.1'
-sourceCompatibility = '1.8'
+sourceCompatibility = '1.9'
 
 repositories {
 	mavenCentral()
@@ -14,10 +18,15 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
-	
-    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+
+	// reactor
+	implementation "io.projectreactor:reactor-core:$reactorVersion"
+
+	annotationProcessor group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
+	compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.16'
 	
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation "io.projectreactor:reactor-test:$reactorVersion"
 }
 
 test {

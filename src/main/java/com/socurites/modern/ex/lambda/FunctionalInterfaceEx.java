@@ -63,6 +63,6 @@ public class FunctionalInterfaceEx {
 	// Supplier
 	// T get();
 	public void supplier() {
-		Supplier<Integer> five = () -> new Integer(5);
+		Supplier<Integer> five = () -> Integer.valueOf(5);
 	}
 }
