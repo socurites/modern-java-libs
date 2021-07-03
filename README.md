@@ -84,6 +84,17 @@
 | ?  | collectingAndThen  | -  | -  | stream().collect(collectingAndThen(toList(), List::size))  |
 
 
+### 메서드 참조
+| 유형  | 예시  | 같은 기능을 하는 람다  |
+| ------------- | ------------- | ------------- |
+| static 메서드 참조  | Integer::parseInt  | str -> Integer.parseInt(str)  |
+| 인스턴스 메서드 참조(한정적)  | Instant.now()::isAfter  | Instant then = Instant.now(); <br/>t -> then.isAfter(t) |
+| 인스턴스 메서드 참조(비한정적)  | String::towLowerCase  | str -> str.toLowerCase()  |
+| 클래스 생성자  | TreeMap<K,V>::new  | () -> new TreeeMap<K,V>  |
+| 배열 생성자  | int[]::new  | len -> new int\[len]  |
+
+
+
 ### 리액티브 프로그래밍(non-blocking & async)
 * CompletableFuture: Java 8 (non-blocking)
 	* Future에 대한 선언형 구문 제공
