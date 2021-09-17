@@ -13,9 +13,9 @@
 
 | @FunctionalInterface  | 기능  | 함수 syntax  | Method Syntax  | 스트림 연산  | 예시  |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Runnable  | 쓰레드  | () -> void  | int compare(T o1, T o2)  | -  |   |
+| Runnable  | 쓰레드  | () -> void  | void run()  | -  |   |
 | Callable<V>  | 쓰레드  | () -> V  | V call() throws Exception  | -  |   |
-| Comparator<T>  | 정렬  | (T, T) -> int  | void run()  | sorted  |   |
+| Comparator<T>  | 정렬  | (T, T) -> int  | int compare(T o1, T o2)  | sorted  |   |
 | Predicate<T>  | 필터링  | (T) -> boolean  | boolean test(T t)  | filter, allMatch, anyMatch, noneMatch  | Collection::isEmpty  |
 | Consumer<T>  | 소비  | (T) -> void  | void accept(T t)  | forEach  | System.out::println  |
 | Function<T, R>  | 매핑  | (T) -> R  | R apply(T t)  | map  | Arrays::asList  |
@@ -47,8 +47,9 @@
         
     * 기타 특징
         * 게으른 연산
-        * 쇼트서킷(short circuit)
+        * [쇼트서킷(short circuit)](https://m.blog.naver.com/priince/221715332621)
         * 루프 퓨전(loop fusion)
+          * [Java 8 스트림](https://juneyr.dev/modern-java-2)
         
 
 * 메서드에 코드를 전달(메서드 참조 & 람다)
@@ -56,7 +57,8 @@
     * 7까지는 익명 클래스를 이용
     * 람다 -> 함수형 프로그래밍 가능
 
-* 인터페이스의 디톨트 메서드
+
+* 인터페이스의 디폴트 메서드
 
 
 ### 함수형 프로그래밍
@@ -64,7 +66,8 @@
 
 
 ### Misc
-* Optional<T>
+* Optional\<T>
+
 
 ### Collectors
 | 유형  | 팩토리 메서드  | 리턴 타입  | 설명  | 예시  |
